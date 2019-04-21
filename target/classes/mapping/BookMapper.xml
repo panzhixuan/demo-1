@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.BookMapper">
+  <resultMap id="BooktMap" type="com.example.demo.model.Book">
+    <result column="book_id" jdbcType="INTEGER" property="bookId" />
+    <result column="book_name" jdbcType="VARCHAR" property="bookName" />
+    <result column="book_type" jdbcType="INTEGER" property="bookType" />
+    <result column="saler_id" jdbcType="INTEGER" property="salerId" />
+    <result column="book_image" jdbcType="VARCHAR" property="bookImage" />
+    <result column="book_author" jdbcType="VARCHAR" property="bookAuthor" />
+    <result column="book_version" jdbcType="VARCHAR" property="bookVersion" />
+    <result column="book_modifytime" jdbcType="TIMESTAMP" property="bookModifytime" />
+    <result column="book_price" jdbcType="DECIMAL" property="bookPrice" />
+    <result column="book_originalprice" jdbcType="DECIMAL" property="bookOriginalprice" />
+    <result column="book_flag" jdbcType="INTEGER" property="bookFlag" />
+  </resultMap>
+  <select id="getBookbyId" parameterType="com.example.demo.model.Book" resultMap="BooktMap">
+        select * from book where book_id = #{arg0}
+  </select>
+</mapper>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.BooktypeMapper">
+  <resultMap id="BooktypeMap" type="com.example.demo.model.Booktype">
+    <result column="booktype_id" jdbcType="INTEGER" property="booktypeId" />
+    <result column="booktype_name" jdbcType="VARCHAR" property="booktypeName" />
+  </resultMap>
+</mapper>

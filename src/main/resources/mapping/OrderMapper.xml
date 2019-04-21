@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.OrderMapper">
+  <resultMap id="OrderMap" type="com.example.demo.model.Order">
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="buyer_id" jdbcType="INTEGER" property="buyerId" />
+    <result column="order_time" jdbcType="TIMESTAMP" property="orderTime" />
+    <result column="book_id" jdbcType="INTEGER" property="bookId" />
+    <result column="order_price" jdbcType="DECIMAL" property="orderPrice" />
+    <result column="order_flag" jdbcType="INTEGER" property="orderFlag" />
+  </resultMap>
+</mapper>

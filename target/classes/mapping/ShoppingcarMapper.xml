@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.ShoppingcarMapper">
+  <resultMap id="ShoppingcarMap" type="com.example.demo.model.Shoppingcar">
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="book_id" jdbcType="INTEGER" property="bookId" />
+  </resultMap>
+  <select id="getAllShoppingCars" parameterType="com.example.demo.model.Shoppingcar" resultMap="ShoppingcarMap">
+        select * from shoppingcar where user_id = #{arg0}
+  </select>
+  <delete id="deleteShoppingCar" parameterType="java.lang.Integer">
+    delete from shoppingcar
+    where book_id = #{arg0} AND user_id = #{arg1}
+  </delete>
+</mapper>

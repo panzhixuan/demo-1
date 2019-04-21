@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+  <resultMap id="UserMap" type="com.example.demo.model.User">
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_realname" jdbcType="VARCHAR" property="userRealname" />
+    <result column="user_sex" jdbcType="INTEGER" property="userSex" />
+    <result column="user_email" jdbcType="VARCHAR" property="userEmail" />
+    <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
+    <result column="user_tel" jdbcType="VARCHAR" property="userTel" />
+  </resultMap>
+  <sql id="User_List">
+    user_id, user_name, user_realname, user_sex, user_email, user_password, user_tel
+  </sql>
+   <insert id="insert" parameterType="com.example.demo.model.User">
+    insert into user (user_name, user_realname, user_sex, user_email, user_password, user_tel
+      )
+    values (#{userName,jdbcType=VARCHAR}, #{userRealname,jdbcType=VARCHAR}, #{userSex,jdbcType=INTEGER}, #{userEmail,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR}, #{userTel,jdbcType=VARCHAR}
+      )
+  </insert>
+  <select id="selectByEmail" parameterType="com.example.demo.model.User" resultMap="UserMap">
+        select * from user where user_email = #{arg0}
+  </select>
+  <select id="selectByUsername" parameterType="com.example.demo.model.User" resultMap="UserMap">
+        select * from user where user_name = #{arg0}
+  </select>
+  <select id="selectByTel" parameterType="com.example.demo.model.User" resultMap="UserMap">
+        select * from user where user_tel = #{arg0}
+  </select>
+  <select id="Login" parameterType="com.example.demo.model.User" resultMap="UserMap">
+        select * from user where user_email = #{arg0} AND user_password = #{arg1}
+  </select>
+  <update id="updateByTel" parameterType="com.example.demo.model.User">
+    update user
+    set user_password = #{arg0}
+    where user_tel = #{arg1}
+  </update>
+  <select id="getUserbyId" parameterType="com.example.demo.model.User" resultMap="UserMap">
+        select * from user where user_id = #{arg0}
+  </select>
+  <update id="modifyUserbyId" parameterType="com.example.demo.model.User">
+    update user
+    set user_name = #{arg1}, user_realname = #{arg2}, user_sex = #{arg3}, user_email = #{arg4}, user_password = #{arg5}, user_tel = #{arg6}
+    where user_id = #{arg0}
+  </update>
+</mapper>
