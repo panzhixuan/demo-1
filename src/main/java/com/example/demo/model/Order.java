@@ -8,7 +8,7 @@ public class Order {
 
     private Integer buyerId;
 
-    private Date orderTime;
+    private String orderTime;
 
     private Integer bookId;
 
@@ -32,11 +32,11 @@ public class Order {
         this.buyerId = buyerId;
     }
 
-    public Date getOrderTime() {
+    public String getOrderTime() {
         return orderTime;
     }
 
-    public void setOrderTime(Date orderTime) {
+    public void setOrderTime(String orderTime) {
         this.orderTime = orderTime;
     }
 

@@ -7,4 +7,6 @@ import com.example.demo.model.Book;
 @Mapper
 public interface BookMapper {
 	Book getBookbyId(int bookid);
+	
+	void updateBookflag(int bookId,int flag);
 }

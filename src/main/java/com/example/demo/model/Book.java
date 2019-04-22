@@ -18,7 +18,7 @@ public class Book {
 
 	private String bookVersion;
 
-	private Date bookModifytime;
+	private String bookModifytime;
 
 	private BigDecimal bookPrice;
 
@@ -82,11 +82,11 @@ public class Book {
 		this.bookVersion = bookVersion == null ? null : bookVersion.trim();
 	}
 
-	public Date getBookModifytime() {
+	public String getBookModifytime() {
 		return bookModifytime;
 	}
 
-	public void setBookModifytime(Date bookModifytime) {
+	public void setBookModifytime(String bookModifytime) {
 		this.bookModifytime = bookModifytime;
 	}
 

@@ -9,4 +9,8 @@
     <result column="order_price" jdbcType="DECIMAL" property="orderPrice" />
     <result column="order_flag" jdbcType="INTEGER" property="orderFlag" />
   </resultMap>
+  <insert id="addOrder" parameterType="com.example.demo.model.Order">
+    INSERT INTO `order` (`buyer_id`,`order_time`,`book_id`, `order_price`, `order_flag`)
+    VALUES (#{buyerId,jdbcType=INTEGER},#{orderTime,jdbcType=TIMESTAMP},#{bookId,jdbcType=INTEGER}, #{orderPrice,jdbcType=DECIMAL}, #{orderFlag,jdbcType=INTEGER})
+  </insert>
 </mapper>

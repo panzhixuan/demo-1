@@ -17,4 +17,9 @@
   <select id="getBookbyId" parameterType="com.example.demo.model.Book" resultMap="BooktMap">
         select * from book where book_id = #{arg0}
   </select>
+  <update id="updateBookflag" parameterType="com.example.demo.model.Book">
+    update book
+    set book_flag = #{arg1}
+    where book_id = #{arg0}
+  </update>
 </mapper>
