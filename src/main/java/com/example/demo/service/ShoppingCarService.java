@@ -32,6 +32,10 @@ public class ShoppingCarService {
 	@Autowired
 	private OrderMapper orderMapper;
 	
+	/**
+     * 
+        * @Description: 获取购物车
+     */
 	public List<Book> getAllShoppingCars(int id) {
 		System.out.println("On Service!");
 		List<Shoppingcar> total=shoppingcarMapper.getAllShoppingCars(id);
@@ -43,6 +47,10 @@ public class ShoppingCarService {
 		return result;
 	}
 	
+	/**
+     * 
+        * @Description: 删除购物车
+     */
 	public String deleteShoppingCar(int bookId,int userId) {
 		System.out.println("On Service!");
 		shoppingcarMapper.deleteShoppingCar(bookId,userId);
@@ -50,12 +58,20 @@ public class ShoppingCarService {
 		return  "Success!";
 	}
 	
+	/**
+     * 
+        * @Description: 购物车购买书籍
+     */
 	public String buyThisBook(int bookId,int userId) {
 		System.out.println("On Service!!!!");
 		shoppingcarMapper.deleteShoppingCar(bookId,userId);
 		return  "Success!";
 	}
 	
+	/**
+     * 
+        * @Description: 添加订单
+     */
 	public String addOrder(Order order) {
 		orderMapper.addOrder(order);
 		return "Success!";

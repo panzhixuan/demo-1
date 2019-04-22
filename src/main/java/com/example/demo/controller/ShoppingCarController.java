@@ -28,6 +28,10 @@ public class ShoppingCarController {
 	@Resource 
 	private ShoppingCarService shoppingCarService;
 	
+	/**
+     * 
+        * @Description: 获取购物车
+     */
 	@GetMapping("/getAllShoppingCars/{id}")
 	@ResponseBody
 	public List<Book> getAllShoppingCars(@PathVariable int id) {
@@ -35,6 +39,10 @@ public class ShoppingCarController {
 		return shoppingCarService.getAllShoppingCars(id);
 	}
 	
+	/**
+     * 
+        * @Description: 删除购物车
+     */
 	@PostMapping("deleteShoppingCar/{bookId}/{userId}")
     @ResponseBody
     public String deleteShoppingCar(@PathVariable int bookId,@PathVariable int userId) {
@@ -42,6 +50,10 @@ public class ShoppingCarController {
         return "Success!";
     }
 	
+	/**
+     * 
+        * @Description: 购物车购买书籍
+     */
 	@PostMapping("buyThisBook/{bookId}/{userId}/{bookPrice}")
     @ResponseBody
     public String buyThisBook(@PathVariable int bookId,@PathVariable int userId,@PathVariable BigDecimal bookPrice){

@@ -44,30 +44,50 @@ public class LoginController {
 		return "Success!";
 	}
 	
+	/**
+     * 
+        * @Description: 检查邮箱
+     */
 	@GetMapping("/checkemail/{email}")
 	public User checkEmail(@PathVariable String email){
 		System.out.println("On Controller!");
 		return loginService.checkEmail(email);
 	}
 	
+	/**
+     * 
+        * @Description: 检查用户名
+     */
 	@GetMapping("/checkusername/{username}")
 	public User checkUsername(@PathVariable String username){
 		System.out.println("On Controller!");
 		return loginService.checkUsername(username);
 	}
 	
+	/**
+     * 
+        * @Description: 检查手机号码
+     */
 	@GetMapping("/checktel/{tel}")
 	public User checkTel(@PathVariable String tel){
 		System.out.println("On Controller!");
 		return loginService.checkTel(tel);
 	}
 	
+	/**
+     * 
+        * @Description: 登录
+     */
 	@GetMapping("/Login/{email}/{password}")
 	public Integer Login(@PathVariable String email,@PathVariable String password){
 		System.out.println("On Controller!");
 		return loginService.Login(email,password);
 	}
 	
+	/**
+     * 
+        * @Description: 更改密码
+     */
 	@GetMapping("/newpassword/{password}/{tel}")
 	public String newPassword(@PathVariable String password,@PathVariable String tel){
 		System.out.println("On Controller!");

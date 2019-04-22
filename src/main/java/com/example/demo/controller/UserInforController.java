@@ -22,6 +22,10 @@ public class UserInforController {
 	@Resource 
 	private UserInforService userInforService;
 	
+	/**
+     * 
+        * @Description: 获取用户
+     */
 	@GetMapping("/getUserbyId/{id}")
 	@ResponseBody
 	public User getUserbyId(@PathVariable int id) {
@@ -29,6 +33,10 @@ public class UserInforController {
 		return userInforService.getUserbyId(id);
 	}
 	
+	/**
+     * 
+        * @Description: 修改用户
+     */
 	@PostMapping("modifyUserbyId")
 	@ResponseBody
 	public String modifyUserbyId(@RequestBody Map map) {

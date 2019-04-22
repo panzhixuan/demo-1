@@ -9,6 +9,10 @@ import com.example.demo.model.Order;
 @Mapper
 public interface OrderMapper {
 	
+	/**
+     * 
+        * @Description: 增加订单
+     */
 	int addOrder(Order record);
 	
 }
