@@ -10,6 +10,11 @@
   </select>
   <delete id="deleteShoppingCar" parameterType="java.lang.Integer">
     delete from shoppingcar
-    where book_id = #{arg0} AND user_id = #{arg1}
+    where user_id = #{arg0} AND book_id = #{arg1}
   </delete>
+  <insert id="insertShoppingCar" parameterType="java.lang.Integer">
+  	insert into `shoppingcar`(`user_id`, `book_id`) 
+  	values (#{userId}, #{bookId})
+  </insert>
+  
 </mapper>

@@ -10,5 +10,10 @@ import com.example.demo.model.Shoppingcar;
 public interface ShoppingcarMapper {
 	List<Shoppingcar> getAllShoppingCars(int id);
 	
-	void deleteShoppingCar(String bookId,String userId);
+	void deleteShoppingCar(int userId, int bookId);
+	
+//	void deleteAllShoppingCar(int userId);
+	
+	void insertShoppingCar(int userId, int bookId);
+	
 }

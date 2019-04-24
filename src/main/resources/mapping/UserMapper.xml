@@ -29,7 +29,7 @@
         select * from user where user_tel = #{arg0}
   </select>
   <select id="Login" parameterType="com.example.demo.model.User" resultMap="UserMap">
-        select * from user where user_email = #{arg0} AND user_password = #{arg1}
+        select * from user where user_email = #{userEmail} AND user_password = #{userPassword}
   </select>
   <update id="updateByTel" parameterType="com.example.demo.model.User">
     update user

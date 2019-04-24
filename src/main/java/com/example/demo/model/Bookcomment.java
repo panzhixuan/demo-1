@@ -1,6 +1,5 @@
 package com.example.demo.model;
 
-import java.util.Date;
 
 public class Bookcomment {
     private Integer commentId;
@@ -11,7 +10,7 @@ public class Bookcomment {
 
 	private String commentText;
 
-	private Date commentModifytime;
+	private String commentModifytime;
 
 	public Integer getCommentId() {
 		return commentId;
@@ -45,11 +44,11 @@ public class Bookcomment {
 		this.commentText = commentText == null ? null : commentText.trim();
 	}
 
-	public Date getCommentModifytime() {
+	public String getCommentModifytime() {
 		return commentModifytime;
 	}
 
-	public void setCommentModifytime(Date commentModifytime) {
+	public void setCommentModifytime(String commentModifytime) {
 		this.commentModifytime = commentModifytime;
 	}
 

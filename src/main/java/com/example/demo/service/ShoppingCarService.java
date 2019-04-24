@@ -23,6 +23,8 @@ public class ShoppingCarService {
 	@Autowired
 	private BookMapper bookMapper;
 	
+	
+	
 	public List<Book> getAllShoppingCars(int id) {
 		System.out.println("On Service!");
 		List<Shoppingcar> total=shoppingcarMapper.getAllShoppingCars(id);
@@ -33,6 +35,23 @@ public class ShoppingCarService {
 		}
 		return result;
 	}
+	
+	public void insertShoppingCar(int userId, int bookId) {
+		System.out.println("On insertShoppingCar Service!");
+		bookMapper.setBookFlagToSold(bookId);
+		shoppingcarMapper.insertShoppingCar(userId, bookId);	
+	}
+	
+	public void deleteShoppingCar(int userId, int bookId) {
+		System.out.println("On insertShoppingCar Service!");
+		bookMapper.setBookFlagToSelling(bookId);
+		shoppingcarMapper.deleteShoppingCar(bookId, userId);
+	}
+	
+//	public void deleteAllShoppingCar(int userId) {
+//		System.out.println("On deleteAllShoppingCar Service!");
+//		
+//	}
 	
 //	public String deleteShoppingCar(int bookId,int userId) {
 //		System.out.println("On Service!");

@@ -17,4 +17,40 @@
   <select id="getBookbyId" parameterType="com.example.demo.model.Book" resultMap="BooktMap">
         select * from book where book_id = #{arg0}
   </select>
-</mapper>
+  <insert id="insertBook" parameterType="com.example.demo.model.Book">
+  	INSERT INTO `book` (`book_name`, `book_type`, `saler_id`, `book_image`, `book_author`, `book_version`, 
+  	`book_modifytime`, `book_price`, `book_originalprice`, `book_flag`) 
+  	VALUES (#{bookName, jdbcType=VARCHAR}, #{bookType, jdbcType=INTEGER}, #{salerId, jdbcType=INTEGER}, #{bookImage, jdbcType=VARCHAR}, 
+  	#{bookAuthor, jdbcType=VARCHAR}, #{bookVersion, jdbcType=VARCHAR}, #{bookModifytime, jdbcType=TIMESTAMP}, 
+  	#{bookPrice, jdbcType=DECIMAL}, #{bookOriginalprice, jdbcType=DECIMAL}, #{bookFlag, jdbcType=INTEGER})
+  </insert>
+  
+  <select id="getAllBook" parameterType="com.example.demo.model.Book" resultMap="BooktMap">
+        select * from book where book_flag = 0
+  </select>  
+  <select id="getScienceBook" parameterType="com.example.demo.model.Book" resultMap="BooktMap">
+        select * from book where book_flag = 0 and book_type = 1
+  </select> 
+  <select id="getEducationBook" parameterType="com.example.demo.model.Book" resultMap="BooktMap">
+        select * from book where book_flag = 0 and book_type = 2
+  </select> 
+  <select id="getLeisureBook" parameterType="com.example.demo.model.Book" resultMap="BooktMap">
+        select * from book where book_flag = 0 and book_type = 3
+  </select> 
+  <select id="getLiteratureBook" parameterType="com.example.demo.model.Book" resultMap="BooktMap">
+        select * from book where book_flag = 0 and book_type = 4
+  </select>   
+
+  <update id="setBookFlagToSold" parameterType="java.lang.Integer">
+  		update book 
+  		set book_flag = 1
+  		where book_id = #{arg0}
+  </update>
+  
+  <update id="setBookFlagToSelling" parameterType="java.lang.Integer">
+  		update book 
+  		set book_flag = 0
+  		where book_id = #{arg0}  
+  </update>
+  
+</mapper>                  

@@ -1,14 +1,13 @@
 package com.example.demo.model;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 public class Order {
     private Integer orderId;
 
     private Integer buyerId;
 
-    private Date orderTime;
+    private String orderTime;
 
     private Integer bookId;
 
@@ -32,11 +31,11 @@ public class Order {
         this.buyerId = buyerId;
     }
 
-    public Date getOrderTime() {
+    public String getOrderTime() {
         return orderTime;
     }
 
-    public void setOrderTime(Date orderTime) {
+    public void setOrderTime(String orderTime) {
         this.orderTime = orderTime;
     }
 
