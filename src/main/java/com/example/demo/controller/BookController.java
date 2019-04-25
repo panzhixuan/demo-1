@@ -44,10 +44,10 @@ public class BookController {
 //			
 //		return "Success!";
 //	}
-	@GetMapping("/sendISBN")
-	public String sendISBN() {
+	@GetMapping("/sendISBN/{ISBNCode}")
+	public String sendISBN(@PathVariable String ISBNCode) {
 		String res=new ShowApiRequest("http://route.showapi.com/1626-1","93011","39823d9847784f21929049af11687647")
-	 			.addTextPara("isbn","9787208061644")
+	 			.addTextPara("isbn",ISBNCode)
 			  .post();
 		
 		System.out.println(res);
