@@ -18,9 +18,9 @@
         select * from book where book_id = #{arg0}
   </select>
   <update id="updateBookflag" parameterType="com.example.demo.model.Book">
-    update book
-    set book_flag = #{arg1}
-    where book_id = #{arg0}
+    update `book`
+    set `book_flag` = #{param2}
+    where `book_id` = #{param1}
   </update>
   <insert id="insertBook" parameterType="com.example.demo.model.Book">
   	INSERT INTO `book` (`book_name`, `book_type`, `saler_id`, `book_image`, `book_author`, `book_version`, 

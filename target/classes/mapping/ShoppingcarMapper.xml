@@ -9,8 +9,8 @@
         select * from shoppingcar where user_id = #{arg0}
   </select>
   <delete id="deleteShoppingCar" parameterType="java.lang.Integer">
-    delete from shoppingcar
-    where user_id = #{arg0} AND book_id = #{arg1}
+    delete from `shoppingcar`
+    where `user_id` = #{param2} AND `book_id` = #{param1}
   </delete>
   <insert id="insertShoppingCar" parameterType="java.lang.Integer">
   	insert into `shoppingcar`(`user_id`, `book_id`) 

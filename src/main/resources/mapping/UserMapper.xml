@@ -33,15 +33,15 @@
   </select>
   <update id="updateByTel" parameterType="com.example.demo.model.User">
     update user
-    set user_password = #{arg0}
-    where user_tel = #{arg1}
+    set user_password = #{param1}
+    where user_tel = #{param2}
   </update>
   <select id="getUserbyId" parameterType="com.example.demo.model.User" resultMap="UserMap">
         select * from user where user_id = #{arg0}
   </select>
   <update id="modifyUserbyId" parameterType="com.example.demo.model.User">
     update user
-    set user_name = #{arg1}, user_realname = #{arg2}, user_sex = #{arg3}, user_email = #{arg4}, user_password = #{arg5}, user_tel = #{arg6}
-    where user_id = #{arg0}
+    set user_name = #{param2}, user_realname = #{param3}, user_sex = #{param4}, user_email = #{param5}, user_password = #{param6}, user_tel = #{param7}
+    where user_id = #{param1}
   </update>
 </mapper>
