@@ -20,5 +20,8 @@ public interface ShoppingcarMapper {
         * @Description: 删除购物车
      */
 	void deleteShoppingCar(int bookId,int userId);
+
+	
+	void insertShoppingCar(int userId, int bookId);
 	
 }

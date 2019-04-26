@@ -27,7 +27,7 @@ public class UploadDownController {
  
         //获取文件在服务器的储存位置
 //        String path = request.getSession().getServletContext().getRealPath("/upload");
-    	String path ="C:\\Users\\Administrator\\Desktop\\软件项目\\项目\\前端汇总\\yishu\\static\\bookImg";
+    	String path ="C:\\Users\\Administrator\\Desktop\\j2EE\\前端汇总\\yishu\\static\\bookImg";
         File filePath = new File(path);
         System.out.println("文件的保存路径：" + path);
         if (!filePath.exists() && !filePath.isDirectory()) {

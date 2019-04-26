@@ -58,6 +58,13 @@ public class ShoppingCarService {
 		return  "Success!";
 	}
 	
+	public void insertShoppingCar(int userId, int bookId) {
+		System.out.println("On insertShoppingCar Service!");
+		bookMapper.setBookFlagToSold(bookId);
+		shoppingcarMapper.insertShoppingCar(userId, bookId);	
+	}
+	
+	
 	/**
      * 
         * @Description: 购物车购买书籍

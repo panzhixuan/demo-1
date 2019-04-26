@@ -13,4 +13,19 @@
     INSERT INTO `order` (`buyer_id`,`order_time`,`book_id`, `order_price`, `order_flag`)
     VALUES (#{buyerId,jdbcType=INTEGER},#{orderTime,jdbcType=TIMESTAMP},#{bookId,jdbcType=INTEGER}, #{orderPrice,jdbcType=DECIMAL}, #{orderFlag,jdbcType=INTEGER})
   </insert>
+  <select id="findOrderbybookId" resultMap="OrderMap">
+        select * from  `order` where `book_id` = #{arg0}
+  </select>
+  <select id="findAllByBuyerId" resultMap="OrderMap">
+        select * from  `order` where `buyer_id` = #{arg0}
+  </select>
+  <update id="setOrderFlag" parameterType="com.example.demo.model.Order">
+    update `order`
+    set `order_flag` = #{param2}
+    where `book_id` = #{param1}
+  </update>
+  <delete id="deleteOrder">
+    delete from `order`
+    where `order_id` = #{arg0}
+  </delete>
 </mapper>
